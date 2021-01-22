@@ -58,14 +58,13 @@ def update_all_users():
         add_or_update_user(user.name)
 
 
-# def example_users():
-#     add_or_update_user('alaynatreene')
-#     add_or_update_user('jonathanvswan')
-
-    # add_or_update_user('weijia')
-    # add_or_update_user('kaitlancollins')
-    # add_or_update_user('Acosta')
-    # add_or_update_user('ZekeJMiller')
-    # add_or_update_user('maggieNYT')
-    # add_or_update_user('Yamiche')
+def example_users():
+    add_or_update_user('brittanys')
+    add_or_update_user('jonathanvswan')
+    add_or_update_user('kaitlancollins')
+    add_or_update_user('Yamiche')
+    add_or_update_user('anniekarni')
+    add_or_update_user('weijia')
+    add_or_update_user('AprilDRyan')
+    add_or_update_user('jeffmason1')
 

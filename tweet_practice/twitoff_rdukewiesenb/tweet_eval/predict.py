@@ -19,16 +19,36 @@ def predict_user(user0, user1, hypothetical_tweet):
     )
     return 0 (reporter1_name) or 1 (reporter2_name)
     """
-    user0 = User.query.filter(User.name=='jonathanvswan').one()
-    user1 = User.query.filter(User.name=='alaynatreene').one()
-    user0_vect = np.array([tweet.vect for tweet in reporter0.tweets])
-    user1_vect = np.array([tweet.vect for tweet in reporter1.tweets])
+    user0 = User.query.filter(User.name=='brittanys').one()
+    user1 = User.query.filter(User.name=='jonathanvswan').one()
+    user2 = User.query.filter(User.name=='kaitlancollins').one()
+    user3 = User.query.filter(User.name=='Yamiche').one()
+    user4 = User.query.filter(User.name=='anniekarni').one()
+    user5 = User.query.filter(User.name=='weijia').one()
+    user6 = User.query.filter(User.name=='AprilDRyan').one()
+    user7 = User.query.filter(User.name=='jeffmason1').one()
 
-    vects = np.vstack([reporter0_vect, reporter1_vect])
+    # Vectorize
+    user0_vect = np.array([tweet.vect for tweet in user0.tweets])
+    user1_vect = np.array([tweet.vect for tweet in user1.tweets])
+    user2_vect = np.array([tweet.vect for tweet in user2.tweets])
+    user3_vect = np.array([tweet.vect for tweet in user3.tweets])
+    user4_vect = np.array([tweet.vect for tweet in user4.tweets])
+    user5_vect = np.array([tweet.vect for tweet in user5.tweets])
+    user6_vect = np.array([tweet.vect for tweet in user6.tweets])
+    user7_vect = np.array([tweet.vect for tweet in user7.tweets])
+
+    vects = np.vstack([user0_vect, user1_vect, user2_vect, user3_vect, user4_vect, user5_vect])
     # find alternative for this argument:
     labels = np.concatenate(
-        [np.zeroes(len(reporter0.tweets)),
-         np.ones(len(reporter1.tweets))]
+        [np.zeroes(len(user0.tweets)),
+         np.ones(len(user1.tweets)),
+         np.twoes(len(user2.tweets)),
+         np.threes(len(user3.tweets)),
+         np.fours(len(user4.tweets)),
+         np.fives(len(user5.tweets)),
+         np.sixes(len(user6.tweets)),
+         np.sevens(len(user7.tweets))]
     )
     log_reg = LogisticRegression().fit(vects, labels)
     hypothetical_tweet = vectorize_tweet(hypothetical_tweet)

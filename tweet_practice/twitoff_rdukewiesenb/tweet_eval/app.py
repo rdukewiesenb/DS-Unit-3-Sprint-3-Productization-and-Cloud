@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from .twitter import example_users, add_or_update_user
+from .twitter import add_or_update_user
 from .model import DB, User, Tweet
 from .predict import predict_user
 

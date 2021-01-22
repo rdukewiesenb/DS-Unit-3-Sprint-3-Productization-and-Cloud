@@ -1,1 +1,0 @@
-web: gunicorn tweet_eval:APP -t 120
